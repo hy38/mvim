@@ -9,3 +9,9 @@ git clone https://github.com/let-def/vimbufsync.git ~/.vim/pack/coq/start/vimbuf
 cp .vimrc ~/.vimrc
 #install plugins
 vim +PlugInstall +qall
+
+# use vi as git editor (for commit ammend, ...)
+git config --global core.editor vi
+
+# ignore globally
+cp .gitignore_global ~/.gitignore_global
