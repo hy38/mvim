@@ -24,3 +24,17 @@ cp .gitignore_global ~/.gitignore_global
     echo "bind \"set show-all-if-ambiguous on\""
     echo "bind \"set menu-complete-display-prefix on\""
 } >> ~/.bashrc
+
+# Appends git aliases to ~/.bashrc
+{
+    echo ""
+    echo "# git alias (git required)"
+    echo "alias gs='git status'"
+    echo "alias ga='git add'"
+    echo "alias gp='git pull'"
+    echo "alias gc='git commit'"
+    echo "alias gss='git submodule status'"
+} >> ~/.bashrc
+
+# apply changes
+source ~/.bashrc
