@@ -15,3 +15,12 @@ git config --global core.editor vi
 
 # ignore globally
 cp .gitignore_global ~/.gitignore_global
+
+# Appends auto-complete options to ~/.bashrc
+{
+    echo "# tab auto-complete"
+    echo "bind 'TAB:menu-complete'"
+    echo "bind '\"\\e[Z\": menu-complete-backward'"
+    echo "bind \"set show-all-if-ambiguous on\""
+    echo "bind \"set menu-complete-display-prefix on\""
+} >> ~/.bashrc
