@@ -13,7 +13,8 @@ set cole=0
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+" FIX: Comment the below line, to use vim-plug.
+" set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle, required
