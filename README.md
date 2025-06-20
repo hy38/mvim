@@ -5,6 +5,7 @@ My personal vim configuration
 * curl
 * make
 * unzip
+* nodejs npm # (optional) for ruff and pydocstring
 
 ## Install
 Just run `./install.sh`
