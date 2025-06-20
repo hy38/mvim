@@ -13,7 +13,6 @@ set cole=0
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-" FIX: Comment the below line, to use vim-plug.
 " set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
@@ -28,6 +27,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'morhetz/gruvbox'
 Plug 'whonore/coqtail'
 Plug 'junegunn/vim-easy-align'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'heavenshell/vim-pydocstring'
 Plug 'fsharp/vim-fsharp', {
       \ 'for': 'fsharp',
       \ 'do':  'make fsautocomplete',
@@ -37,7 +40,7 @@ call plug#end()            " required
 colorscheme gruvbox
 set background=dark
 
-map <C-n> <ESC>:NERDTreeToggle<CR> 
+map <C-n> <ESC>:NERDTreeToggle<CR>
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -52,7 +55,7 @@ nmap <C-l> <leader>cl
 nnoremap H gT
 nnoremap L gt
 
-" ctrlpvim: ignore some folders and files for finding 
+" ctrlpvim: ignore some folders and files for finding
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|public$\|log$\|tmp$\vendor$',
       \ 'file': '\v\.(exe|sh|jar|class)$'
@@ -81,6 +84,25 @@ let &conceallevel = 0
 "setl fo=
 "setl nojs
 "setl nosmartindent
+
+" Linters
+let g:ale_linters = { "python": ["ruff"] }
+
+" Fixers
+let g:ale_fixers = { "python": ["ruff", "ruff_format"] }
+
+let g:ale_fix_on_save = 1 " Auto-fix on save
+let g:ale_python_ruff_executable = "$HOME/.local/bin/ruff-lsp" " Path of ruff-lsp
+
+let g:pydocstring_doq_path = "[doq path]"
+let g:pydocstring_formatter = 'google' " Set pydocstring style to 'google'
+
+" Show error info on error
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_format = '%s'
+
+" Disable the ALE status line by uncommenting below
+" let g:ale_statusline = 0
 
 " Strip trailing whitespaces
 function! <SID>StripTrailingWhitespaces()
