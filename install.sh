@@ -18,6 +18,7 @@ cp .gitignore_global ~/.gitignore_global
 
 # Appends auto-complete options to ~/.bashrc
 {
+    echo ""
     echo "# tab auto-complete"
     echo "bind 'TAB:menu-complete'"
     echo "bind '\"\\e[Z\": menu-complete-backward'"
