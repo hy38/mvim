@@ -10,6 +10,7 @@ My personal vim configuration
 ## Install
 Just run `./install.sh`
 
+For ruff and pydocstring, do this as well: `sudo npm install -g bash-language-server`
 
 ## Tab Autocomplete bashrc option
 
