@@ -2,6 +2,7 @@
 My personal vim configuration
 
 ## Prerequirement
+* curl
 * make
 * unzip
 
