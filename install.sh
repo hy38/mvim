@@ -16,6 +16,10 @@ git config --global core.editor vi
 # ignore globally
 cp .gitignore_global ~/.gitignore_global
 
+# for bash theme
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+chmod +x ~/.config/base16-shell/scripts/*.sh
+
 # Appends auto-complete options to ~/.bashrc
 {
     echo ""
@@ -36,6 +40,14 @@ cp .gitignore_global ~/.gitignore_global
     echo "alias gc='git commit'"
     echo "alias gss='git submodule status'"
 } >> ~/.bashrc
+
+# Appends bash theme settings to ~/.bashrc
+{
+    echo ""
+    echo "# Set bash theme to gruvbox"
+    echo "$HOME/.config/base16-shell/scripts/base16-gruvbox-dark-hard.sh"
+} >> ~/.bashrc
+
 
 # apply changes
 source ~/.bashrc
