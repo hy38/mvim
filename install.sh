@@ -51,3 +51,6 @@ chmod +x ~/.config/base16-shell/scripts/*.sh
 
 # apply changes
 source ~/.bashrc
+
+# For intel-style disassembly
+echo "set disassembly-flavor intel" >> ~/.gdbinit
