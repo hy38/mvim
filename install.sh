@@ -48,6 +48,29 @@ chmod +x ~/.config/base16-shell/scripts/*.sh
     echo "$HOME/.config/base16-shell/scripts/base16-gruvbox-dark-hard.sh"
 } >> ~/.bashrc
 
+# Appends git branch settings to ~/.bashrc
+{
+    echo "parse_git_branch() {"
+    echo "    git branch 2>/dev/null | sed -n '/\* /s///p' | awk '{print \"(\" \$0 \")\"}'"
+    echo "}"
+    echo ""
+    echo "c_cyan=\$(tput setaf 6)"
+    echo "c_red=\$(tput setaf 1)"
+    echo "c_green=\$(tput setaf 2)"
+    echo "c_sgr0=\$(tput sgr0)"
+    echo ""
+    echo "branch_color() {"
+    echo "    if git rev-parse --git-dir >/dev/null 2>&1; then"
+    echo "        if git diff --quiet 2>/dev/null >&2; then"
+    echo "            echo -ne \"\${c_green}\""
+    echo "        else"
+    echo "            echo -ne \"\${c_red}\""
+    echo "        fi"
+    echo "    fi"
+    echo "}"
+    echo ""
+    echo "export PS1='\\[\\e[01;32m\\]\\u@\\h \\[\\e[34m\\]\\w\\[\$(branch_color)\\]\$(parse_git_branch)\\[\${c_sgr0}\\] \\$ '"
+} >> ~/.bashrc
 
 # apply changes
 source ~/.bashrc
