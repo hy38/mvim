@@ -2,6 +2,11 @@
 My personal vim configuration
 
 ## Prerequirement
+
+```sh
+sudo apt install curl make unzip vim
+```
+
 * curl
 * make
 * unzip
@@ -27,3 +32,4 @@ bind "set show-all-if-ambiguous on"
 # cycling full results on the second Tab press (from bash version 5)
 bind "set menu-complete-display-prefix on"
 ```
+
