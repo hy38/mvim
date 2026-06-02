@@ -39,6 +39,7 @@ chmod +x ~/.config/base16-shell/scripts/*.sh
     echo "alias gp='git pull'"
     echo "alias gc='git commit'"
     echo "alias gss='git submodule status'"
+    echo "alias gac='git apply --check --whitespace=error'"
 } >> ~/.bashrc
 
 # Appends bash theme settings to ~/.bashrc
