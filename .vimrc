@@ -117,3 +117,8 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Using file extension
 "autocmd BufWritePre *.h,*.c,*.java :call <SID>StripTrailingWhitespaces()
+
+augroup patch_email_diff
+  autocmd!
+  autocmd BufRead,BufNewFile v*-email.txt,*-email.txt,*-reply.txt,*patch-email.txt setlocal filetype=diff
+augroup END
